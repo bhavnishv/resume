@@ -1,0 +1,782 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavnish V. | Portfolio</title>
+
+    <!-- Elegant serif font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+    /* =========================
+       COLOUR PALETTE
+    ========================= */
+
+    :root {
+        --teal: #31AAA9;
+        --cream: #F8E0A4;
+        --red: #A82020;
+        --dark-red: #6C1A1A;
+        --background: #250E12;
+        --text: #F8E0A4;
+        --muted: #D8C69E;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: var(--background);
+        color: var(--text);
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        overflow-x: hidden;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+        height: 80px;
+        padding: 0 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--dark-red);
+    }
+
+    .logo {
+        font-size: 35px;
+        font-weight: 600;
+        letter-spacing: -4px;
+        color: var(--cream);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 38px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        font-size: 17px;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: var(--teal);
+    }
+
+    .connect-btn {
+        border: 1px solid var(--cream);
+        padding: 10px 22px;
+        border-radius: 30px;
+        transition: 0.3s;
+    }
+
+    .connect-btn:hover {
+        background: var(--teal);
+        color: #190D0D;
+        border-color: var(--teal);
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================= */
+
+    .hero {
+        min-height: 510px;
+        padding: 65px 6%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        position: relative;
+        overflow: hidden;
+        background:
+            radial-gradient(circle at 75% 30%, #31AAA955, transparent 40%),
+            linear-gradient(110deg, #250E12, #6C1A1A);
+    }
+
+    .hero-content {
+        width: 55%;
+        z-index: 2;
+    }
+
+    .hero h1 {
+        font-size: clamp(65px, 9vw, 110px);
+        line-height: 0.9;
+        font-weight: 500;
+        margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+        color: var(--teal);
+    }
+
+    .hero p {
+        font-size: 23px;
+        line-height: 1.3;
+        margin-bottom: 30px;
+    }
+
+    .hero-image {
+        width: 42%;
+        height: 540px;
+        border-radius: 180px 180px 15px 15px;
+        overflow: hidden;
+        border: 1px solid #F8E0A455;
+        z-index: 1;
+    }
+
+    .hero-image img {
+        height: 100%;
+        object-position: center 30%;
+    }
+
+    .primary-btn {
+        display: inline-block;
+        padding: 12px 25px;
+        border: 1px solid var(--cream);
+        border-radius: 30px;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+    .primary-btn:hover {
+        background: var(--teal);
+        color: #190D0D;
+        border-color: var(--teal);
+    }
+
+    /* =========================
+       COMMON SECTION STYLES
+    ========================= */
+
+    section {
+        padding: 65px 5%;
+    }
+
+    .section-label {
+        color: var(--teal);
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 15px;
+    }
+
+    .section-heading {
+        font-size: 43px;
+        line-height: 1;
+        font-weight: 500;
+        margin-bottom: 18px;
+    }
+
+    .section-description {
+        font-size: 19px;
+        line-height: 1.45;
+        color: var(--muted);
+        text-align: left;
+    }
+
+    /* =========================
+       ABOUT SECTION
+    ========================= */
+
+ .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    border-top: 1px solid #F8E0A422;
+    padding: 70px 20px;
+}
+
+.about-image {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-content {
+    max-width: 750px;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.about-content h2 span {
+    color: var(--teal);
+    font-style: italic;
+}
+
+.about-details {
+    border-left: none;
+    border-top: 1px solid var(--teal);
+    padding: 20px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.detail-icon {
+    font-size: 25px;
+    color: var(--teal);
+    width: 35px;
+}
+
+    /* =========================
+       EXPERIENCES
+    ========================= */
+
+    .experiences {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .experience-image {
+        height: 280px;
+        border-radius: 15px;
+        overflow: hidden;
+        background:
+            radial-gradient(circle at center, #31AAA9, #6C1A1A);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .experience-image span {
+        font-size: 100px;
+        color: var(--cream);
+        opacity: 0.6;
+    }
+
+    /* =========================
+       MUSIC SECTION
+    ========================= */
+
+    .music {
+        display: grid;
+        grid-template-columns: 0.7fr 1.3fr;
+        gap: 45px;
+        align-items: center;
+        border-top: 1px solid #F8E0A422;
+    }
+
+    .music-image {
+        height: 260px;
+        border-radius: 14px;
+        overflow: hidden;
+    }
+
+    .music-image img {
+        height: 100%;
+    }
+
+    .music h2 span {
+        color: var(--teal);
+        font-style: italic;
+    }
+
+    /* =========================
+       CONTENT CREATOR
+    ========================= */
+
+    .creator {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 35px;
+        padding: 40px;
+    }
+
+    .creator-quote {
+        border-left: 1px solid var(--teal);
+        padding-left: 35px;
+        display: flex;
+        align-items: center;
+        font-size: 28px;
+        font-style: italic;
+        line-height: 1.2;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 25px;
+        margin-top: 25px;
+        flex-wrap: wrap;
+    }
+
+    .social-links a {
+        font-size: 19px;
+        border-bottom: 1px solid transparent;
+        transition: 0.3s;
+    }
+
+    .social-links a:hover {
+        color: var(--teal);
+        border-color: var(--teal);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        padding: 35px 5%;
+        border-top: 1px solid #F8E0A444;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .footer-socials {
+        display: flex;
+        gap: 30px;
+        font-size: 19px;
+    }
+
+    .footer-socials a:hover {
+        color: var(--teal);
+    }
+
+    .footer-tagline {
+        font-size: 21px;
+        font-style: italic;
+    }
+
+    /* =========================
+       BACKGROUND MUSIC PLAYER
+    ========================= */
+
+    .audio-player {
+        text-align: center;
+        padding: 25px;
+        border-top: 1px solid #F8E0A422;
+    }
+
+    .audio-player p {
+        margin-bottom: 12px;
+        font-size: 17px;
+    }
+
+    .audio-player audio {
+        width: 230px;
+        max-width: 100%;
+    }
+
+    /* =========================
+       RESPONSIVE DESIGN
+    ========================= */
+
+    @media (max-width: 850px) {
+
+        nav {
+            height: auto;
+            padding: 20px 5%;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-links {
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .connect-btn {
+            display: none;
+        }
+
+        .hero {
+            flex-direction: column;
+            text-align: center;
+            padding: 50px 5%;
+        }
+
+        .hero-content,
+        .hero-image {
+            width: 100%;
+        }
+
+        .hero-image {
+            height: 400px;
+            max-width: 400px;
+        }
+
+        .about {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .about-details {
+            grid-column: span 2;
+        }
+
+        .experiences,
+        .music {
+            grid-template-columns: 1fr;
+        }
+
+        .creator {
+            grid-template-columns: 1fr;
+        }
+
+        .creator-quote {
+            padding: 20px;
+        }
+    }
+
+    @media (max-width: 550px) {
+
+        nav {
+            justify-content: center;
+        }
+
+        .nav-links {
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+        }
+
+        .hero p {
+            font-size: 19px;
+        }
+
+        section {
+            padding: 45px 6%;
+        }
+
+        .about {
+            grid-template-columns: 1fr;
+        }
+
+        .about-details {
+            grid-column: auto;
+            border-left: none;
+            border-top: 1px solid var(--teal);
+            padding: 15px 0;
+        }
+
+        .section-heading {
+            font-size: 36px;
+        }
+
+        .about-content h2 {
+            font-size: 35px;
+        }
+
+        .creator {
+            padding: 25px;
+        }
+
+        footer {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <a href="#home" class="logo">BV</a>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#creator">Creations</a></li>
+            <li><a href="#music">Music</a></li>
+            </ul>
+
+    
+        </a>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Bhavnish.V<span>.</span>
+            </h1>
+
+            <p>
+                A student. A creator.A musician.<br>
+                On a journey to explore, create and contribute.
+            </p>
+
+            <a href="#about" class="primary-btn">
+                Explore My Journey ↓
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+
+            <!-- CHANGE YOUR HERO IMAGE HERE -->
+
+            <img src="c:\Users\ASUS\Downloads\20260817_113106.jpg"
+                 alt="Bhavnish in a suit">
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT ME -->
+
+    <section class="about" id="about">
+
+        <div class="about-image">
+
+           
+
+        </div>
+
+        <div class="about-content">
+
+            <div class="section-label">About Me</div>
+
+            <h2>
+                Hi, I'm <span>Bhavnish.</span>
+            </h2>    
+
+            <p class="section-description">
+                A BBA student at IIM Bangalore, passionate
+                about business, creativity and music.
+                I love turning ideas into stories, whether
+                it's through content, a concert, or a new pursuit.
+            </p> 
+        
+
+        </div>
+
+        <div class="about-details">
+
+            <div class="detail">
+                <span class="detail-icon">♧</span>
+                <span>BBA, IIM Bangalore</span>
+            </div>
+
+            <div class="detail">
+                <span class="detail-icon">▷</span>
+                <span>Content Creator<br>(YouTube & Instagram)</span>
+            </div>
+
+            <div class="detail">
+                <span class="detail-icon">♫</span>
+                <span>Pianist & Music Lover</span>
+            </div>
+
+            <div class="detail">
+                <span class="detail-icon">↗</span>
+                <span>Always Exploring</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCES -->
+
+    <section class="experiences" id="experiences">
+
+        <div>
+
+            <div class="section-label">Experiences</div>
+
+            <h2 class="section-heading">
+                Building, Performing,<br>
+                Creating.
+            </h2>
+
+            <p class="section-description">
+                Lead 20 singers and 5 musicians in multiple school and college programs while performing as lead pianist
+            </p>
+
+        </div>
+
+
+       
+         <img src="c:\Users\ASUS\Downloads\IMG-20250131-WA0026.jpg"
+             alt="band pic">
+
+    </section>
+
+
+    <!-- MUSIC -->
+
+    <section class="music" id="music">
+
+        <div>
+
+            <div class="section-label">Music</div>
+
+            <h2 class="section-heading">
+                Keys, Not Just<br>
+                for <span>Notes.</span>
+            </h2>
+
+            <p class="section-description">
+                A pianist at heart, I find my rhythm in music —
+                whether it's on stage, in practice, or in life.
+            </p>
+
+        </div>
+
+        <div class="music-image">
+
+            <!-- CHANGE YOUR PIANO IMAGE HERE -->
+
+            <img src="c:\Users\ASUS\Downloads\IMG_20231022_114235_648 (1).jpg"
+                 alt="Bhavnish playing the piano">
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTENT CREATOR -->
+
+    <section id="creator">
+
+        <div class="creator">
+
+            <div>
+
+                <div class="section-label">
+                    Content Creator
+                </div>
+
+                <h2 class="section-heading">
+                    Documenting<br>
+                    The Journey.
+                </h2>
+
+                <p class="section-description">
+                    On YouTube and Instagram, This channel is where I document what I learn, what I create, what I explore, and everything in between.
+                </p>
+
+                <div class="social-links">
+
+                    <a href="https://www.youtube.com/@BVise_26"
+                       target="_blank" rel="noopener noreferrer">
+                         YouTube
+                    </a>
+
+                    <a href="https://www.instagram.com/_bhavnishv_/"
+                       target="_blank" rel="noopener noreferrer">
+                         Instagram
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="creator-quote">
+
+                Because there's always more to learn,
+                more to create, and more to discover.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+   
+
+    <!-- FOOTER -->
+
+    <footer id="contact">
+
+        <a href="#home" class="logo">BV</a>
+
+    
+
+        <div class="footer-socials">
+
+            <a href="https://www.linkedin.com/in/bhavnishv/"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="LinkedIn">
+                Linkedin
+            </a>
+
+           
+
+            <a href="https://www.instagram.com/_bhavnishv_/"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Instagram">
+                Instagram
+            </a>
+
+        </div>
+
+       
+
+    </footer>
+
+</body>
+</html>
